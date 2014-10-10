@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SIPDB Mobile</title>
+	<link rel="stylesheet"  href="css/themes/default/jquery.mobile-1.3.1.min.css">
+	<link rel="stylesheet" href="demo/css/jqm-demos.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <script type="text/javascript" charset="utf-8" src="cordova-2.6.0.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="demo/js/jquery.mobile.demos.js"></script>
+	<script src="js/jquery.mobile-1.3.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="proses/surveiinsert.js"></script>
+</head>
+<body style="background-color:#CCC;">
+<div data-role="page" class="jqm-demos">
+
+   <!-- <div data-role="header" class="jqm-header" data-position="fixed">
+		<h1 class="jqm-logo"><a href="#"><img src="demo/img/jquery-logo-2.png" alt="jQuery Mobile Framework"></a></h1>
+        <a href="#" class="jqm-navmenu-link" data-icon="bars" data-iconpos="notext">Navigation</a>
+	</div>-->
+    
+  <div data-role="header" data-position="fixed">
+	<a href="survei.html" data-icon="arrow-l" data-theme="b" data-transition="slide">Back</a>
+	<h1></h1>
+	
+  </div>
+    
+    
+   <!-- rightpanel2  -->
+
+    
+    
+    <div data-role="content" class="jqm-content">
+    
+        	<div id="loading_panel" style="display:none;text-align:center;">
+            	<b>Please Waiting...!</b>
+                <br><br>
+            	<div class="progress progress-striped active">
+            		<div class="bar" style="width: 100%;"></div>
+        		</div>
+            </div>
+            
+            <div id="required" class="alert alert-danger" style="display:none;text-align:center;">
+                <strong>Your data is not complete</strong>
+             </div>
+             
+             <div id="sukses" class="alert alert-success" style="display:none;text-align:center;">
+                <strong>Your data has been sent</strong>
+             </div>
+            
+            <div id="conn_failed" style="display:none;text-align:center;color:#F00;">
+            	<div class="alert alert-danger">
+                	<strong>Connection Failed...! Please try again</strong>
+            	</div>
+                <br><br><br>
+                <a href="saran.html" data-role="button" data-inline="true" data-icon="check" data-theme="b" data-ajax="false">Back</a>
+            </div>
+            
+            
+    		<div id="formsaran">
+            	<form style="margin-top:-8px;">
+					<label for="jumlah_karyawan">JUMLAH KARYAWAN</label>
+					<input name="jumlah_karyawan" id="jumlah_karyawan" value="" type="text" autocomplete="off">
+                
+					<label for="jumlah_modal">JUMLAH MODAL </label>
+					<input name="jumlah_modal" id="jumlah_modal" value="" type="text" autocomplete="off">
+				
+					<label for="status_kantor">STATUS KANTOR</label><br />
+					<select name="status_kantor" id="status_kantor" > 
+							<option value="MILIK SENDIRI">Milik Sendiri</option>
+							<option value="SEWA">Sewa</option>
+							<option value="MENUMPANG">Menumpang</option>
+							<option value="LAINNYA">Lainnya</option>
+					</select>
+	
+					<label for="jumlah_aset">JUMLAH ASET</label>
+					<input type="text" name="jumlah_aset" id="jumlah_aset" value="" type="text" autocomplete="off" />
+				
+					<label for="omset_perbulan">OMSET PERBULAN</label>
+					<input type="text" name="omset_perbulan" id="omset_perbulan" value="" type="text" autocomplete="off" />
+				
+					<label for="keuntungan_bersih_perbulan">KEUNTUNGAN BERSIH PERBULAN</label>
+					<input type="text" name="keuntungan_bersih_perbulan" id="keuntungan_bersih_perbulan" value="" type="text" autocomplete="off" />
+			
+					<label for="bantuan_pernah_diterima">BANTUAN PERNAH DITERIMA</label>
+					<input type="text" name="bantuan_pernah_diterima" id="bantuan_pernah_diterima" value="" type="text" autocomplete="off" />
+			
+					<label for="pemasaran">PEMASARAN</label>
+						<select name="pemasaran" id="pemasaran" > 
+							<option value="DALAM KOTA">Dalam Kota</option>
+							<option value="LUAR KOTA">Luar Kota</option>
+							<option value="LUAR NEGERI">Luar Negeri</option>
+						</select>
+			
+					<label for="sistem_pelayanan">SISTEM PELAYANAN</label>
+						<select name="sistem_pelayanan" id="sistem_pelayanan" > 
+							<option value="MANUAL">Manual</option>
+							<option value="TERKOMPUTERISASI">Terkomputerisasi</option>
+							<option value="SEMI MANUAL">Semi Manual</option>
+						</select>
+
+					<label for="jadwal_pelayanan">JADWAL PELAYANAN</label>
+						<select name="jadwal_pelayanan" id="jadwal_pelayanan" > 
+							<option value="setiap hari">Setiap Hari</option>
+							<option value="1x seminggu">Sekali Seminggu</option>
+							<option value="2x seminggu">Dua Kali Seminggu</option>
+							<option value="3x seminggu">Tiga Kali Seminggu</option>
+							<option value="4x seminggu">Enpat Kali Seminggu</option>
+							<option value="5x seminggu">Lima Kali Seminggu</option>
+							<option value="6x seminggu">Enam Kali Seminggu</option>
+							<option value="sekali dua minggu">Sekali Dua Minggu</option>
+							<option value="sekali tiga minggu">Sekali Tiga Minggu</option>
+							<option value="sekali sebulan">Sekali Sebulan</option>
+						</select>
+
+					<label for="pembukuan">PEMBUKUAN</label>
+						<select name="pembukuan" id="pembukuan" > 
+							<option value="ADA">Ada</option>
+							<option value="TIDAK ADA">Tidak Ada</option>
+							<option value="SEADANYA">Seadanya</option>
+						</select>
+
+					<label for="label_harga">LABEL HARGA</label>
+						<select name="label_harga" id="label_harga" > 
+							<option value="ADA">Ada</option>
+							<option value="TIDAK ADA">Tidak Ada</option>
+							<option value="SEBAGIAN">Sebagian</option>
+						</select>
+				
+					<label for="layout_barang">LAYOUT BARANG</label>
+						<select name="layout_barang" id="layout_barang" > 
+							<option value="ADA">Ada</option>
+							<option value="TIDAK ADA">Tidak Ada</option>
+							<option value="SEBAGIAN">Sebagian</option>
+						</select>
+
+					<label for="hasil_survei">HASIL SURVEI</label>
+					<textarea rows="4" cols="50" name="hasil_survei" id="hasil_survei" > </textarea>
+			
+					<label for="kecamatan">KECAMATAN</label>
+					<select name="kecamatan" id="kecamatan" >
+							<option value="PADANG SELATAN">Padang Selatan</option>
+							<option value="PADANG BARAT">Padang Barat</option>
+							<option value="PADANG TIMUR">Padang Timur</option>
+							<option value="PADANG UTARA">Padang Utara</option>
+							<option value="PAUH">Pauh</option>
+							<option value="LUBUK BEGALUNG">Lubuk Begalung</option>
+							<option value="NANGGALO">Nanggalo</option>
+							<option value="BUNGUS TELUK KABUNG">Bungus Teluk Kabung</option>
+							<option value="KURANJI">Kuranji</option>
+							<option value="LUBUK KILANGAN">Lubuk Kilangan</option>
+							<option value="KOTO TANGAH">Koto Tangah</option>
+					</select>
+
+                 <p>
+                 	<a href="#" id="proses" data-role="button" data-inline="true" data-icon="check" data-theme="b" data-ajax="false">Submit</a>
+                </p>
+				</form>
+            </div>
+          
+            
+    </div><!-- /content -->
+    
+    <div id="loading" style="text-align:center;font-weight:bold;visibility:hidden;">Checking Data...!</div>
+    
+    
+    
+    <div data-role="panel" class="jqm-nav-panel jqm-navmenu-panel" data-position="left" data-display="overlay" data-theme="c">
+        <ul data-role="listview" data-theme="d" data-divider-theme="a" class="jqm-list">
+			<li><a href="survei.html" data-rel="page" data-transition="slide" data-inline="true"><img src="css/menu/gmail.png" class="ui-li-icon ui-corner-none">Permohonan Baru</a></li>
+		</ul>
+    </div><!-- /panel -->
+    
+    
+
+</div><!-- /page -->
+</body>
+</html>
